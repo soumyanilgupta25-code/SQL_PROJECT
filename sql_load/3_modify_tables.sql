@@ -1,11 +1,9 @@
-/* ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-Database Load Issues (follow if receiving permission denied when running SQL code below)
+/* ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+Database Load Issues (followed after receiving permission denied when running SQL code below)
 
-NOTE: If you are having issues with permissions. And you get error: 
+I used ChatGpT to get the steps to load the data into the tables. I had to run the same code in pgAdmin to get the data loaded. The code below is useless.
 
-'could not open file "[your file path]\job_postings_fact.csv" for reading: Permission denied.'
-
-1. Open pgAdmin
+1. Opened pgAdmin
 2. In Object Explorer (left-hand pane), navigate to `sql_course_2` database
 3. Right-click `sql_course_2` and select `PSQL Tool`
     - This opens a terminal window to write the following code
@@ -15,7 +13,7 @@ NOTE: If you are having issues with permissions. And you get error:
 
 \copy company_dim FROM '/Users/soumyanilgupta/Downloads/SQL_PROJECT/csv_files/company_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
-\copy skills_dim FROM '/Users/soumyanilgupta/Downloads/SQL_PROJECT/csv_files/skills_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy skills_dim FROM '/Users/soumyanilgupta/Downloads/SQL_ROJECT/csv_files/skills_dim.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 \copy job_postings_fact FROM '/Users/soumyanilgupta/Downloads/SQL_PROJECT/csv_files/job_postings_fact.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
@@ -23,22 +21,20 @@ NOTE: If you are having issues with permissions. And you get error:
 
 */
 
--- NOTE: This has been updated from the video to fix issues with encoding
-
+-- NOTE: This is the SQL code to load the tables with data from the CSV files. It is useless. Had to run the same code in pgAdmin to get the data loaded. 
 COPY company_dim
-FROM 'C:\Program Files\PostgreSQL\16\data\Datasets\sql_course_2\company_dim.csv'
+FROM '/Users/soumyanilgupta/Downloads/SQL_PROJECT/csv_files/company_dim.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 COPY skills_dim
-FROM 'C:\Program Files\PostgreSQL\16\data\Datasets\sql_course_2\skills_dim.csv'
+FROM '/Users/soumyanilgupta/Downloads/SQL_ROJECT/csv_files/skills_dim.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 COPY job_postings_fact
-FROM 'C:\Program Files\PostgreSQL\16\data\Datasets\sql_course_2\job_postings_fact.csv'
+FROM '/Users/soumyanilgupta/Downloads/SQL_PROJECT/csv_files/job_postings_fact.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 COPY skills_job_dim
-FROM 'C:\Program Files\PostgreSQL\16\data\Datasets\sql_course_2\skills_job_dim.csv'
+FROM '/Users/soumyanilgupta/Downloads/SQL_PROJECT/csv_files/skills_job_dim.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
-SELECT Count(*) FROM job_postings_fact
