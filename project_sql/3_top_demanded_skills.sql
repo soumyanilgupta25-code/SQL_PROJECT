@@ -21,6 +21,7 @@ ORDER BY demand_count DESC
 LIMIT 5;
 
 
+
 /*
 Here's the breakdown of the most demanded skills for data analysts:
 SQL and Excel remain fundamental, emphasizing the need for strong foundational skills in data processing and spreadsheet manipulation.
