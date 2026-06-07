@@ -6,7 +6,7 @@
 # Background
 Built alongside Luke Barousse's SQL Course as a hands-on learning project. I used the course as a foundation but wrote my own queries and shaped the analysis around what I wanted to find out - specifically what skills and roles command the highest salaries for data analysts in India.
 
-Data hails from Luke Barousse's [SQL Course](https://lukebarousse.com/sql). It's packed with insights on job titles, salaries, locations, and essential skills.
+Data hails from Luke Barousse's [SQL Dataset](https://lukebarousse.com/sql). It's packed with insights on job titles, salaries, locations, and essential skills.
 
 ### The questions I wanted to answer through my SQL queries were:
 
